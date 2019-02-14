@@ -42,23 +42,20 @@
         }else{
             if(!preg_match("/[A-Z]/", $password)){
                 $errores['password_no_mayusculas']='El password debe contener al menos una mayuscula </br>';
-                $password_no_mayusculas_valido=false;
+                $no_mayusculas_valido=false;
             }
             if(!preg_match("/[0-9]/", $password)){
                 $errores['password_no_numeros']='El password debe contener al menos un numero</br>';
-                $password_no_mayusculas_valido=false;
+                $no_numeros_valido=false;
             }
             if(strlen($password)<8){
                 $errores['password_numero_caracteres']="El password debe contener mas de 8 caracteres </br>";
-                $password_numero_caracteres_valido=false;
+                $numero_caracteres_valido=false;
             }
                    
         }
         
-        //SE MUESTRAN LOS ERRORES EN CASO DE HABER
-        /*foreach($errores as $error){
-            echo $error;
-        }*/
+       
         
         //SE INGRESAN LOS DATOS A LA BASE DE DATOS EN CASO DE NO HABER ERRORES
         if(count($errores)==0){

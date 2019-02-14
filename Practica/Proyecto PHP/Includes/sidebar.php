@@ -23,33 +23,33 @@
                     <!--NAME-->
                     <label for="name">Nombre</label>
                     <p><input type="text" name="name"/></p>
-                    <?php if($_SESSION['nombre_valido']!=false){
+                    <?php if($_SESSION['nombre_valido']==false){
                         echo'<strong style="color:red"><font size="2.8">'.$_SESSION['errores']['nombre'] .'</font></strong>';
                     }?>
                     <!--LASTNAME-->
                     <label for="lastname">Apellido</label>
                     <p><input type="text" name="lastname"/></p>
-                    <?php if($_SESSION['apellido_valido']!=false){
+                    <?php if($_SESSION['apellido_valido']==false){
                         echo'<strong style="color:red"><font size="2.8">'.$_SESSION['errores']['apellido'] .'</font></strong>';
                     }?>
                     <!--EMAIL-->
                     <label for="email">Email</label>
                     <p><input type="email" name="email"/></p>
-                    <?php if($_SESSION['email_valido']!=false){
+                    <?php if($_SESSION['email_valido']==false){
                         echo'<strong style="color:red"><font size="2.8">'.$_SESSION['errores']['email'] .'</font></strong>';
                     }?>
                     <!--PASSWORD-->
                     <label for="password">Contraseña</label>
                     <p><input type="password" name="password"/></p>
                     <?php
-                        if($_SESSION['password_no_mayusculas']!=false){
+                        if($_SESSION['no_mayusculas_valido']==false){
                             echo'<strong style="color:red"><font size="2.8">'.$_SESSION['errores']['password_no_mayusculas'] .'</font></strong>';
                         }
-                        if($_SESSION['password_numero_caracteres_valido']!=false){
-                            echo'<strong style="color:red"><font size="2.8">'.$_SESSION['errores']['password_numero)caracteres'] .'</font></strong>';
+                        if($_SESSION['numero_caracteres_valido']==false){
+                            echo'<strong style="color:red"><font size="2.8">'.$_SESSION['errores']['password_numero_caracteres'] .'</font></strong>';
                         }
-                        if($_SESSION['password_no_numeros_valido']!=NULL){
-                           echo'<strong style="color:red"><font size="2.8">'.$_SESSION['errores']['password_no_numeros'] .'</font></strong>';
+                        if($_SESSION['numeros_valido']==false){
+                            echo'<strong style="color:red"><font size="2.8">'.$_SESSION['errores']['password_no_numeros'] .'</font></strong>';
                         }
                     ?>
                     <!--SUBMIT-->
