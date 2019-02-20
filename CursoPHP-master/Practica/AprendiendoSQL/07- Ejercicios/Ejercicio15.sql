@@ -1,5 +1,0 @@
-#MOSTRAR LOS CLIENTES QUE MAS PEDIDOS HAN HECHO Y MOSTRAR CUANTOS HICIERON#
-
-SELECT cl.nombre AS 'CUSTOMER NAME', e.cantidad AS 'ORDER QUANTITY' FROM encargos e
-INNER JOIN clientes cl ON cl.id=e.cliente_id
-GROUP BY (e.cantidad) ORDER BY (e.cantidad) DESC LIMIT 2;

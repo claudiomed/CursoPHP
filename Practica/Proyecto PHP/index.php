@@ -52,8 +52,7 @@
             <!--VER TODAS LAS ENTRADAS-->
             <div id="view-all">
                 <a href="">Ver todas las entradas</a>
-            </div>
-                       
+            </div>           
             
         </div>
         

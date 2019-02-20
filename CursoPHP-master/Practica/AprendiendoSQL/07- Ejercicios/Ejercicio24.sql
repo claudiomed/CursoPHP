@@ -1,6 +1,0 @@
-#LISTAR LOS ENCARGOS CON EL NOMBRE DEL COCHE, EL NOMBRE DEL CLIENTE Y EL NOMBRE DE LA CIUDAD PERO UNICAMENTE QUE SEAN DE MADRID#
-SELECT co.marca AS 'MARCA DE COCHE', cl.nombre AS 'NOMBRE DE CLIENTE', cl.ciudad AS 'CIUDAD'
-FROM encargos e
-INNER JOIN coches co ON co.id=e.coche_id
-INNER JOIN clientes cl ON cl.id=e.cliente_id
-WHERE cl.ciudad LIKE '%barce%';
