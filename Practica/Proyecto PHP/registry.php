@@ -15,7 +15,6 @@
             //SE VALIDA EL NOMBRE INGRESADO
             if(!preg_match("/[A-Za-z]/", $nombre) || preg_match("/[0-9]/", $nombre)){
                 $errores['nombre']="El nombre contiene caracteres no validos";
-                //$nombre_valido=false;
                 $errores['nombre_valido']=false;
             }
 
@@ -52,20 +51,19 @@
         }
         
         //SE INGRESAN LOS DATOS A LA BASE DE DATOS EN CASO DE NO HABER ERRORES
-        if($_SESSION['errores']==NULL){
-            echo"Data sent successfully";
+        if($_SESSION['errores']==NULL && isset($_POST['submit'])){
+            header("Location: index.php");
             $secure_password = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
             $sql="INSERT INTO users VALUES(NULL, '$nombre', '$apellido', '$email', '$secure_password', CURDATE())";
             mysqli_query($connection, $sql);
-
+            $_SESSION['registro']="Registro exitoso";
 
         }else{
             $_SESSION['errores']=$errores;
+            header("Location: index.php");
+            echo mysqli_error($connection);
+            mysqli_errno($connection);
         }  
-        
-        
-       
-        
         
        ?>
         
