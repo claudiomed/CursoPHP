@@ -1,13 +1,7 @@
     <?php include_once 'connection.php';?> 
     <?php include_once 'login.php';?>
         <!--SIDEBAR-->
-        <aside id="sidebar">
-            <?php if(verifyAccount($email, $password)):?>
-            <?php echo "Login Successfull";?>
-            <?php elseif(!verifyAccount($email, $password)):?>
-            <?php echo "Login Failed"?>
-            <?php else: echo "The account under email $email does not exist." ;?>
-            <?php endif; ?>            
+        <aside id="sidebar">        
             <div id="login" class="block-aside">
                 <h3>Identificate</h3>
                 <form action="login.php" method="POST">
