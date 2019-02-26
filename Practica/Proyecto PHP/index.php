@@ -1,8 +1,7 @@
         <?php session_start()?>
 
         <?php require_once 'includes/header.php';?>
-        
-        
+
         <!--SIDEBAR-->    
         <?php require_once 'includes/sidebar.php';?>    
         

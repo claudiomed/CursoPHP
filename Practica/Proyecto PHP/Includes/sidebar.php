@@ -2,6 +2,13 @@
     <?php include_once 'login.php';?>
         <!--SIDEBAR-->
         <aside id="sidebar">        
+            <?php if(isset($_SESSION['usuario'])):?>
+            <div id="usuario-logueado" class="block-aside">
+                <?php $nombre=getUserInformation($_SESSION['email']);?>
+                <h3><?php echo $nombre['nombre']." ".$nombre['apellido']?></h3>
+                <a class="boton" href="includes/close_session.php">Cerrar sesion</a>
+            </div>
+            <?php endif;?>
             <div id="login" class="block-aside">
                 <h3>Identificate</h3>
                 <form action="login.php" method="POST">
@@ -12,14 +19,15 @@
                     <label for="password">Contraseña</label>
                     <p><input type="text" name="password"/></p>
                     <!--SUBMIT-->
-                    <p><input type="submit" name="submit"/></p>
+                    <p><input type="submit" name="submit" value="submit"/></p>
                 </form>
             </div>
-            
+            <?php if(isset($_SESSION['registro'])):  ?>
             <div id="estadoRegistro" class="block-aside">
                 <?php echo isset($_SESSION['registro'])? $_SESSION['registro']:''?>
+                <?php unset($_SESSION['registro']) ?>
             </div>
-            
+            <?php endif;  ?>
             <div id="register" class="block-aside">
                 <h3>Registrate</h3>
                 <form action="registry.php" method="POST">
@@ -41,9 +49,6 @@
                     <div id="errorMessages"><?php echo isset($_SESSION['errores']['no_mayusculas_valido'])?showError($_SESSION['errores']['no_mayusculas_valido'], $_SESSION['errores']['password_no_mayusculas']):'' ?></div>
                     <div id="errorMessages"><?php echo isset($_SESSION['errores']['no_numeros_valido'])?showError($_SESSION['errores']['no_numeros_valido'], $_SESSION['errores']['password_no_numeros']):'' ?></div>
                     <div id="errorMessages"><?php echo isset($_SESSION['errores']['numero_caracteres_valido'])?showError($_SESSION['errores']['numero_caracteres_valido'], $_SESSION['errores']['password_numero_caracteres']):'' ?></div>  
-                    <?php var_dump(mysqli_error($connection));?>
-                    
-                    
                     <!--SUBMIT-->
                     <p><input type="submit" name="submit" value="submit"/></p>
                 </form>

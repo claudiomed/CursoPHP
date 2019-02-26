@@ -10,17 +10,12 @@
     
     //SE BUSCA EL NOMBRE EL EMAIL Y LA CONTRASENA EN LA BASE DE DATOS
     function verifyAccount($email, $password){
-        $queryPassword="SELECT password FROM users WHERE email='$email'";
-        $queryEmail="SELECT email FROM users WHERE email='$email'";
-        $sqlP=mysqli_query($_SESSION['connection'], $queryPassword);
-        $sqlE=mysqli_query($_SESSION['connection'], $queryEmail);
+        $query="SELECT * FROM users WHERE email='$email'";
+        $sql=mysqli_query($_SESSION['connection'], $query);
         //SE SACA EL PASSWORD DE LA BASE DE DATOS
-        $TemPass= mysqli_fetch_assoc($sqlP);
-        //SE SACA EL CORREO DE LA BASE DE DATOS
-        $tempEmail= mysqli_fetch_assoc($sqlE);
-        
-        if($email==$tempEmail['email']){
-            if(password_verify($password, $TemPass['password'])){
+        $temp= mysqli_fetch_assoc($sql);
+        if($email==$temp['email']){
+            if(password_verify($password, $temp['password'])){
                 return true;
             }else{
                 return false;
@@ -31,26 +26,32 @@
   
     }
     
-    
-    function unset_variables(){
-        unset($_POST);
+    //SE EXTRAE LA INFORMACION DEL USUARIO PARA MOSTRARLO CUANDO SE HACE EL LOGIN   
+    function getUserInformation($email){
+        $query= mysqli_query($_SESSION['connection'], "SELECT nombre, apellido FROM users WHERE email='$email'");
+        $names= mysqli_fetch_assoc($query);
+        return $names;
     }
-    
-    
     
     //VERIFICACION DE CUENTA PARA EL LOGIN
     if(isset($_POST['submit'])){
         if(verifyAccount($email, $password)===NULL){
+            session_start();
             echo"The account does not exist";
             unset($_POST);
+            $_SESSION['usuario']=true;
         }else if(verifyAccount($email, $password)){
+            session_start();
             echo"Login successfull";
-            unset($_POST);
+            $_SESSION['usuario']=true;
+            $_SESSION['email']=$email;
+            header("refresh:3; url=index.php"); 
         }else{
+            session_start();
             echo"Login failed";
             unset($_POST);
+            $_SESSION['usuario']=NULL;
         }
-        
     }
     
     
