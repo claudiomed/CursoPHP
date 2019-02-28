@@ -23,7 +23,6 @@
         }else{
             return NULL;
         }
-  
     }
     
     //SE EXTRAE LA INFORMACION DEL USUARIO PARA MOSTRARLO CUANDO SE HACE EL LOGIN   
@@ -38,8 +37,8 @@
         if(verifyAccount($email, $password)===NULL){
             session_start();
             echo"The account does not exist";
+            header("refresh:3; url=index.php");
             unset($_POST);
-            $_SESSION['usuario']=true;
         }else if(verifyAccount($email, $password)){
             session_start();
             echo"Login successfull";
@@ -49,8 +48,8 @@
         }else{
             session_start();
             echo"Login failed";
+            header("refresh:3; url=index.php");
             unset($_POST);
-            $_SESSION['usuario']=NULL;
         }
     }
     

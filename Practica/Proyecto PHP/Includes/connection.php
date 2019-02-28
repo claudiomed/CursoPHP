@@ -1,8 +1,8 @@
 <?php
     $server='localhost';
-    $userName='Medrano';
+    $userName='root';
     $password='Password';
-    $database='masterphp';
+    $database='medrano';
 
     $connection= mysqli_connect($server,$userName,$password, $database);
     $_SESSION['connection']=$connection;

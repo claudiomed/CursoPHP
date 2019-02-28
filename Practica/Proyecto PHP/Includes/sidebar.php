@@ -5,8 +5,10 @@
             <?php if(isset($_SESSION['usuario'])):?>
             <div id="usuario-logueado" class="block-aside">
                 <?php $nombre=getUserInformation($_SESSION['email']);?>
-                <h3><?php echo $nombre['nombre']." ".$nombre['apellido']?></h3>
-                <a class="boton" href="includes/close_session.php">Cerrar sesion</a>
+                <h3><?php echo "Bienvenido, " .$nombre['nombre']." ".$nombre['apellido']?></h3>
+                <a class="boton boton-entrada" href="includes/entradas.php">Crear una entrada</a>
+                <a class="boton boton-cerrarSesion" href="includes/close_session.php">Cerrar sesion</a>
+            </div>
             </div>
             <?php endif;?>
             <div id="login" class="block-aside">

@@ -148,7 +148,6 @@ input[type="password"]{
     margin-bottom: 2px;
 }
 
-.boton,
 input[type="button"], 
 input[type="submit"]
 {
@@ -162,11 +161,50 @@ input[type="submit"]
     margin-top: 20px;
 }
 
+.boton{
+    display: block;
+    padding: 5px;   
+    border-radius: 5px;
+    color: white;
+    background: #2979CD;
+    border: 1px solid #156785;
+    cursor: pointer;   
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 150px;
+    text-align: center;
+}
+
+.boton-entrada{
+    background-color: green;
+    border-color: darkgreen;
+    
+}
+
+.boton-cerrarSesion{
+    background-color: red;   
+}
+
+.boton-misDatos{
+    background-color: orange;
+}
+
+
 input[type="text"], 
 input[type="email"],
 input[type="password"]{
     margin-bottom: 10px;
     padding: 5px;
+}
+
+#usuario-logueado{
+    margin-top: auto;
+    height: 100px;
+}
+
+#usuario-logueado h3{
+    font-family: "fajala", Helvetica;
+    color: #999;
 }
 
 .block-aside h3{
