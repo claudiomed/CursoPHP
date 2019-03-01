@@ -9,7 +9,6 @@
                 <a class="boton boton-entrada" href="includes/entradas.php">Crear una entrada</a>
                 <a class="boton boton-cerrarSesion" href="includes/close_session.php">Cerrar sesion</a>
             </div>
-            </div>
             <?php endif;?>
             <div id="login" class="block-aside">
                 <h3>Identificate</h3>
