@@ -185,8 +185,12 @@ input[type="submit"]
     background-color: red;   
 }
 
-.boton-misDatos{
+.boton-mi_cuenta{
     background-color: orange;
+}
+
+.boton-crear_categoria{
+    
 }
 
 
@@ -243,6 +247,12 @@ input[type="password"]{
     margin-top: 8px;
 }
 
+.informacion_entrada{
+    margin-top: 10px;
+    color: #4e4e4e;
+    font-size: 15px;
+}
+
 
 #view-all{
     margin-top: 45px;
@@ -273,6 +283,7 @@ input[type="password"]{
     height: auto;
     padding: 4px;
     text-align: center;
+    margin-top: 30px;
 }
 
 

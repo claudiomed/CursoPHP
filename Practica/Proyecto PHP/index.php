@@ -4,48 +4,24 @@
 
         <!--SIDEBAR-->    
         <?php require_once 'includes/sidebar.php';?>    
+        <?php require_once 'includes/helper.php';?>    
         
         <!--MAIN CONTENT-->
                      
         <div id="mainContent">
             <h1>Ultimas entradas</h1>
             <article class="entrada">
+                <?php $entradas= getEntradas();
+                    while($resultados= mysqli_fetch_assoc($entradas)):
+                ?>           
                 <a href="">
-                     <h2>Titulo de mi entrada</h2>
+                     <h2><?= $resultados['titulo'];?></h2>
+                     <span class="informacion_entrada"><?=$resultados['Nombre de categoria']." | ".$resultados['fecha']?></span>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, 
-                            remaining essentially unchanged. 
+                            <?=$resultados['descripcion'];?>
                         </p>                    
-                </a>               
-            </article>
-            
-            <article class="entrada">
-                    <a href="">
-                     <h2>Titulo de mi entrada</h2>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, 
-                            remaining essentially unchanged.
-                        </p>                    
-                    </a>  
-            </article>
-            
-            <article class="entrada">
-                <a href="../AprendiendoPHP/Index.php">
-                     <h2>Titulo de mi entrada</h2>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, 
-                            remaining essentially unchanged. 
-                        </p>                    
-                    </a>  
+                </a>    
+                <?php endwhile;?>
             </article>
             
             <!--VER TODAS LAS ENTRADAS-->

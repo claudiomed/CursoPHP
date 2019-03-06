@@ -1,5 +1,6 @@
 <?php
     require_once 'connection.php';
+    require_once 'helper.php';
     
 ?>
 
@@ -27,22 +28,13 @@
                     <li>
                         <a href="index.php">Inicio</a>
                     </li>
-                    <!--CATEGORIA 1-->
-                    <li>
-                        <a href="index.php">Categoria 1</a>
-                    </li>
-                    <!--CATEGORIA 2-->
-                    <li>
-                        <a href="index.php">Categoria 2</a>
-                    </li>
-                    <!--CATEGORIA 3-->
-                    <li>
-                        <a href="index.php">Categoria 3</a>
-                    </li>
-                    <!--CATEGORIA 4-->
-                    <li>
-                        <a href="index.php">Categoria 4</a>
-                    </li>
+                    <?php $categorias= getCategories();?>
+                    <?php for($cont=0;$cont<count($categorias);$cont++):?>  
+                        <li>
+                            <a href="index.php"> <?=$categorias[$cont] ?> </a>
+                        </li>
+                    <?php endfor;?>
+                    
                      <!--SOBRE NOSOTROS-->
                     <li>
                         <a href="index.php">Sobre nosotros</a>
