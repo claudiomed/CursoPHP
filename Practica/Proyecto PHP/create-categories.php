@@ -4,6 +4,7 @@
             include_once 'includes/redirect.php';?>
     <?php   include_once 'includes/header.php';?>
     <?php   include_once 'includes/sidebar.php';?>
+    <?php   include_once 'save_categories.php';?>
 
     <div id="mainContent">
            
@@ -16,7 +17,27 @@
             <p><label for="name">Nombre</label></p>
             <input type="text" name="name"/>
             <input type="submit" name="submit" value="submit"/>
+            <?php if(isset($_SESSION['categoria'])):?>
+                <?php $_SESSION['available']= insertCategoria($_SESSION['categoria']);?>
+                <?php if($_SESSION['available']):?>
+                    <?php $exitoso=true;?>            
+                <?php else: $exitoso=false; ?>            
+                <?php endif;?>
+                <?php unset($_SESSION['categoria']);?>
+            <?php endif;?>
         </form>
+             <?php if(isset($exitoso)):?>
+                 <?php if($exitoso):?>
+                    <div id="estadoRegistro" class="block-aside">
+                    <h3>La categoria ha sido exitosamente creada</h3>
+                    </div>
+                <?php endif; ?>   
+                <?php if(!$exitoso):?>
+                    <div id="estadoRegistro" class="block-aside">
+                        <h3>La categoria ya existe</h3>
+                    </div>
+                <?php endif; ?> 
+            <?php   endif;?>
             
     </div>
         

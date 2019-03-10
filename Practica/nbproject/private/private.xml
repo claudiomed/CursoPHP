@@ -4,10 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp64/www/CursoPHP/Practica/Proyecto%20PHP/create-categories.php</file>
-            <file>file:/C:/wamp64/www/CursoPHP/Practica/Proyecto%20PHP/Assets/Css/style.css</file>
+            <file>file:/C:/wamp64/www/CursoPHP/Practica/Proyecto%20PHP/login.php</file>
             <file>file:/C:/wamp64/www/CursoPHP/Practica/Proyecto%20PHP/save_categories.php</file>
             <file>file:/C:/wamp64/www/CursoPHP/Practica/Proyecto%20PHP/Includes/Sidebar.php</file>
-            <file>file:/C:/wamp64/www/CursoPHP/Practica/Proyecto%20PHP/registry.php</file>
+            <file>file:/C:/wamp64/www/CursoPHP/Practica/Proyecto%20PHP/Includes/connection.php</file>
+            <file>file:/C:/wamp64/www/CursoPHP/Practica/Proyecto%20PHP/Includes/helper.php</file>
         </group>
     </open-files>
 </project-private>
