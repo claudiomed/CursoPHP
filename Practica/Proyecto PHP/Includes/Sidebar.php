@@ -6,7 +6,7 @@
             <div id="usuario-logueado" class="block-aside">
                 <?php $nombre=getUserInformation($_SESSION['email']);?>
                 <h3><?php echo "Bienvenido, " .$nombre['nombre']." ".$nombre['apellido']?></h3>
-                <a class="boton boton-entrada" href="includes/entradas.php">Crear una entrada</a>
+                <a class="boton boton-entrada" href="create-entries.php">Crear una entrada</a>
                 <a class="boton boton-crear_categoria" href="create-categories.php">Crear categoria</a>
                 <a class="boton boton-mi_cuenta" href="includes/myAccount.php">Mi cuenta</a>
                 <a class="boton boton-cerrarSesion" href="includes/close_session.php">Cerrar sesion</a>

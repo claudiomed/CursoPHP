@@ -5,6 +5,7 @@
     <?php   include_once 'includes/header.php';?>
     <?php   include_once 'includes/sidebar.php';?>
     <?php   include_once 'save_categories.php';?>
+    <?php   include_once 'includes/helper.php';?>
 
     <div id="mainContent">
            
