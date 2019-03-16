@@ -4,7 +4,6 @@
             include_once 'includes/redirect.php';?>
     <?php   include_once 'includes/header.php';?>
     <?php   include_once 'includes/sidebar.php';?>
-    <?php   include_once 'save_entries.php';?>
 
     <div id="mainContent">
            
@@ -22,10 +21,10 @@
             <textarea type="text" name="description"></textarea>
             <!--CATEGORIA-->
             <p><label for="category">Categoria</label></p>
-            <?php $categorias= getCategories();?>
-            <select>
-                <?php for($cont=0;$cont<count($categorias);$cont++):?>  
-                <option value="category"> <?=$categorias[$cont] ?> </option>
+            <?php $categorias= getCategoriesNames();?>
+            <select name="category">
+                <?php for($cont=0;$cont<count($categorias);$cont++):?>
+                        <option value="<?=$categorias[$cont]?>"> <?=$categorias[$cont];?></option>
                 <?php endfor;?>
             </select>
             <input type="submit" name="submit" value="submit"/>

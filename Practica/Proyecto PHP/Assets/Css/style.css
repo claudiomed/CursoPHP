@@ -189,8 +189,12 @@ input[type="submit"]
     background-color: orange;
 }
 
-.boton-crear_categoria{
-    
+.boton-cambioPassword{
+    background-color: orange;
+}
+
+.boton-cambioPassword:hover{
+    background-color: green;
 }
 
 
@@ -222,6 +226,7 @@ input[type="password"]{
     overflow: hidden;
 }
 
+
 #mainContent a{
     color: #333;
 }
@@ -245,6 +250,22 @@ input[type="password"]{
 
 #mainContent p{
     margin-top: 8px;
+}
+
+#mainContent_myAccount{
+    float: left;
+    width: 65%;
+    min-height: 534px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ccc;
+    margin-left: 20px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+#mainContent_myAccount p{
+    color: #4e4e4e;;
 }
 
 .informacion_entrada{

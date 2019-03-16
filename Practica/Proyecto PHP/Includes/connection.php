@@ -1,9 +1,12 @@
 <?php
+    if(!isset($_SESSION)){
+        session_start();
+    }
 
     $server='localhost';
-    $userName='Medrano';
+    $userName='root';
     $password='Password';
-    $database='masterphp';
+    $database='Medrano';
 
     $connection= mysqli_connect($server,$userName,$password, $database);
     $_SESSION['connection']=$connection;

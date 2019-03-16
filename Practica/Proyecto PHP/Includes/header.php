@@ -28,7 +28,7 @@
                     <li>
                         <a href="index.php">Inicio</a>
                     </li>
-                    <?php $categorias= getCategories();?>
+                    <?php $categorias= getCategoriesNames();?>
                     <?php for($cont=0;$cont<count($categorias);$cont++):?>  
                         <li>
                             <a href="index.php"> <?=$categorias[$cont] ?> </a>

@@ -27,7 +27,7 @@
     
     //SE EXTRAE LA INFORMACION DEL USUARIO PARA MOSTRARLO CUANDO SE HACE EL LOGIN   
     function getUserInformation($email){
-        $query= mysqli_query($_SESSION['connection'], "SELECT nombre, apellido FROM users WHERE email='$email'");
+        $query= mysqli_query($_SESSION['connection'], "SELECT nombre, apellido, id FROM users WHERE email='$email'");
         $names= mysqli_fetch_assoc($query);
         return $names;
     }
