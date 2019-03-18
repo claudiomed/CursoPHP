@@ -1,5 +1,4 @@
     <?php include_once 'connection.php';?> 
-    <?php include_once '../login.php';?>
         <!--SIDEBAR-->
         <aside id="sidebar">        
             <?php if(isset($_SESSION['usuario'])):?>

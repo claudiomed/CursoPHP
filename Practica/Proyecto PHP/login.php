@@ -1,6 +1,7 @@
 <?php
     include_once 'includes/connection.php';
-    
+    include_once 'includes/helper.php';
+
     //SE COMPRUEBA SI LLEGA LA INFORMACION INGRESADA
     if(isset($_POST['submit'])){
         $email=$_POST['email'];
@@ -24,29 +25,37 @@
             return NULL;
         }
     }
-    
+    /*
     //SE EXTRAE LA INFORMACION DEL USUARIO PARA MOSTRARLO CUANDO SE HACE EL LOGIN   
     function getUserInformation($email){
-        $query= mysqli_query($_SESSION['connection'], "SELECT nombre, apellido, id FROM users WHERE email='$email'");
+        $query= mysqli_query($_SESSION['connection'], "SELECT nombre, apellido, id, email FROM users WHERE email='$email'");
         $names= mysqli_fetch_assoc($query);
         return $names;
     }
+     * 
+     */
     
     //VERIFICACION DE CUENTA PARA EL LOGIN
     if(isset($_POST['submit'])){
         if(verifyAccount($email, $password)===NULL){
-            session_start();
+            if(!isset($_SESSION)){
+                session_start();
+            }
             echo"The account does not exist";
             header("refresh:3; url=index.php");
             unset($_POST);
         }else if(verifyAccount($email, $password)){
-            session_start();
+            if(!isset($_SESSION)){
+                session_start();
+            }
             echo"Login successfull";
-            $_SESSION['usuario']=true;
             $_SESSION['email']=$email;
+            $_SESSION['usuario']= getUserInformation($email);
             header("refresh:3; url=index.php"); 
         }else{
-            session_start();
+            if(!isset($_SESSION)){
+                session_start();
+            }
             echo"Login failed";
             header("refresh:3; url=index.php");
             unset($_POST);

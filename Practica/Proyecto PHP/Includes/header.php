@@ -8,7 +8,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8"/>    
-        <title>Blog de videojuegos</title>
+        <title>Blog del 10</title>
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
     </head>
     
@@ -18,7 +18,7 @@
             <!--LOGO-->
             <div id="logo"> 
                 <a href="index.php">
-                    Blog de videojuegos
+                    El blog del 10
                 </a>
             </div>
             <!--MENU-->
@@ -31,7 +31,7 @@
                     <?php $categorias= getCategoriesNames();?>
                     <?php for($cont=0;$cont<count($categorias);$cont++):?>  
                         <li>
-                            <a href="index.php"> <?=$categorias[$cont] ?> </a>
+                            <a href="categoria.php?id=<?= getCategoryID($categorias[$cont])?>"> <?=$categorias[$cont] ?> </a>
                         </li>
                     <?php endfor;?>
                     

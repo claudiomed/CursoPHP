@@ -1,4 +1,7 @@
-        <?php session_start()?>
+        
+        <?php if(isset($_SESSION)):?>
+        <?php session_start();?>
+        <?php endif;?>
 
         <?php require_once 'includes/header.php';?>
 
@@ -9,9 +12,9 @@
         <!--MAIN CONTENT-->
                      
         <div id="mainContent">
-            <h1>Ultimas entradas</h1>
+            <h1>Todas las entradas</h1>
             <article class="entrada">
-                <?php $entradas= getEntradas(true);
+                <?php $entradas= getEntradas(false);
                     while($resultados= mysqli_fetch_assoc($entradas)):
                 ?>           
                 <a href="">
@@ -19,20 +22,13 @@
                      <span class="informacion_entrada"><?=$resultados['Nombre de categoria']." | ".$resultados['fecha']?></span>
                         <p>
                             <?=$resultados['descripcion'];?>
-                        </p>                    
-                </a>    
+                        </p>
+                </a>
                 <?php endwhile;?>
-            </article>
-            
-            <!--VER TODAS LAS ENTRADAS-->
-            <div id="view-all">
-                <a href="entradas.php">Ver todas las entradas</a>
-            </div>           
+            </article>         
             
         </div>
         
         
         <!--FOOTER-->
         <?php require_once 'includes/footer.php';?> 
-        
-

@@ -4,9 +4,9 @@
     }
 
     $server='localhost';
-    $userName='root';
+    $userName='Medrano';
     $password='Password';
-    $database='Medrano';
+    $database='masterphp';
 
     $connection= mysqli_connect($server,$userName,$password, $database);
     $_SESSION['connection']=$connection;

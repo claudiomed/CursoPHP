@@ -12,19 +12,20 @@
         <form action="updateInformation.php" method="POST">
             <!--NAME-->
             <label for="name">Nombre</label>
-            <p><input type="text" name="name"/></p>
+            <?php $user= getUserInformation($_SESSION['email']);?>
+            <p><input type="text" name="name" value="<?= $user['nombre']?>"/></p>
             <div id="errorMessages"><?php echo isset($_SESSION['errores']['nombre_valido'])?showError($_SESSION['errores']['nombre_valido'], $_SESSION['errores']['nombre']):'' ?></div>
             <!--LASTNAME-->
-            <label for="lastname">Apellido</label>
-            <p><input type="text" name="lastname"/></p>
+             <p><input type="text" name="lastname" value="<?=$user['apellido']?>"/></p>
             <div id="errorMessages"><?php echo isset($_SESSION['errores']['apellido_valido'])?showError($_SESSION['errores']['apellido_valido'], $_SESSION['errores']['apellido']):'' ?></div>
+            <!--EMAIL-->
+            <label for="lastname">Email</label>
+            <p><input type="email" name="email" value="<?= $user['email']?>"/></p>
+            <div id="errorMessages"><?php echo isset($_SESSION['errores']['email_valido'])?showError($_SESSION['errores']['email_valido'], $_SESSION['errores']['email']):'' ?></div>
             <p><input type="submit" name="submit" value="Update"/></p>
         </form>
-            
-        
+        <?php unset($_SESSION['errores']); ?>
     </div>
-        
-        
     <!--FOOTER-->
     <?php require_once 'includes/footer.php';?> 
 

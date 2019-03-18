@@ -1,5 +1,6 @@
 <?php
         include_once 'includes/connection.php';
+        include_once 'includes/helper.php';
 
         //session_start();
     
@@ -54,9 +55,7 @@
         if($_SESSION['errores']==NULL && isset($_POST['submit'])){
             session_start();
             header("Location: index.php");
-            $secure_password = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
-            $sql="INSERT INTO users VALUES(NULL, '$nombre', '$apellido', '$email', '$secure_password', CURDATE())";
-            mysqli_query($connection, $sql);
+            insertUserInformation($nombre, $apellido, $email, $password);
             $_SESSION['registro']="Registro exitoso";
         }else{
             session_start();
