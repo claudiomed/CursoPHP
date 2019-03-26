@@ -11,6 +11,7 @@
     
     //SE BUSCA EL NOMBRE EL EMAIL Y LA CONTRASENA EN LA BASE DE DATOS
     function verifyAccount($email, $password){
+        $email= strtolower($email);
         $query="SELECT * FROM users WHERE email='$email'";
         $sql=mysqli_query($_SESSION['connection'], $query);
         //SE SACA EL PASSWORD DE LA BASE DE DATOS

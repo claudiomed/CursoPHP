@@ -1,6 +1,16 @@
     <?php include_once 'connection.php';?> 
+    <?php include_once 'helper.php';?> 
         <!--SIDEBAR-->
-        <aside id="sidebar">        
+        <aside id="sidebar">
+            <div id="login" class="block-aside">
+                    <h3>Busqueda</h3>
+                    <form action="search.php" method="POST">
+                        <!--EMAIL-->
+                        <p><input type="text" name="search"/></p>
+                        <!--SUBMIT-->
+                        <p><input type="submit" name="submit" value="buscar"/></p>
+                    </form>
+                </div>
             <?php if(isset($_SESSION['usuario'])):?>
             <div id="usuario-logueado" class="block-aside">
                 <?php $nombre=getUserInformation($_SESSION['email']);?>

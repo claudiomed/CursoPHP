@@ -9,7 +9,7 @@
            
         <h1>Informacion de usuario</h1>
 
-        <form action="updateInformation.php" method="POST">
+        <form action="updateInformation.php" method="POST" enctype="multipart/form-data">
             <!--NAME-->
             <label for="name">Nombre</label>
             <?php $user= getUserInformation($_SESSION['email']);?>
@@ -22,6 +22,8 @@
             <label for="lastname">Email</label>
             <p><input type="email" name="email" value="<?= $user['email']?>"/></p>
             <div id="errorMessages"><?php echo isset($_SESSION['errores']['email_valido'])?showError($_SESSION['errores']['email_valido'], $_SESSION['errores']['email']):'' ?></div>
+            <label for="photo">Foto</label>
+            <p><input type="file" name="photo"/></p>
             <p><input type="submit" name="submit" value="Update"/></p>
         </form>
         <?php unset($_SESSION['errores']); ?>

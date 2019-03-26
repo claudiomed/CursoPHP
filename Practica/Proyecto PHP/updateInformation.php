@@ -35,6 +35,13 @@
                 $_SESSION['email']=$email;
                 updateUser($nombre, $apellido, $email, $_SESSION['usuario']['id']);
             }
+            
+            if(!getimagesize($_FILES['photo']['tmp_name'])==FALSE){
+                $foto= file_get_contents($foto=$_FILES['photo']['tmp_name']);
+                $foto_nombre=$_FILES['photo']['name'];
+                $foto_size= getimagesize($_FILES['photo']['tmp_name']);
+                insertPhoto($foto, $_SESSION['usuario']['id']);
+            }
     }
 ?>
 

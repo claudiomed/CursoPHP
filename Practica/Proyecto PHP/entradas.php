@@ -17,15 +17,17 @@
                 <?php $entradas= getEntradas(false);
                     while($resultados= mysqli_fetch_assoc($entradas)):
                 ?>           
-                <a href="">
-                     <h2><?= $resultados['titulo'];?></h2>
-                     <span class="informacion_entrada"><?=$resultados['Nombre de categoria']." | ".$resultados['fecha']?></span>
-                        <p>
-                            <?=$resultados['descripcion'];?>
-                        </p>
+                <a href="entradaCompleta.php?id=<?=$resultados['id']?>">
+                    <h2><?= $resultados['titulo'];?></h2>
+                        <span class="informacion_entrada"><?=$resultados['Nombre de categoria']." | ".$resultados['fecha']?></span>
+                        <br>
+                        <span class="informacion_entrada">Autor: <?=$resultados['Nombre']." ".$resultados['Apellido']?></span>
+                    <p>
+                        <?=$resultados['descripcion'];?>
+                    </p>
                 </a>
                 <?php endwhile;?>
-            </article>         
+            </article>
             
         </div>
         

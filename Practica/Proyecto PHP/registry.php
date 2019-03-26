@@ -53,9 +53,11 @@
         
         //SE INGRESAN LOS DATOS A LA BASE DE DATOS EN CASO DE NO HABER ERRORES
         if($_SESSION['errores']==NULL && isset($_POST['submit'])){
-            session_start();
-            header("Location: index.php");
+            if(!isset($_SESSION)){
+                session_start();
+            }
             insertUserInformation($nombre, $apellido, $email, $password);
+            header("Location:index.php");
             $_SESSION['registro']="Registro exitoso";
         }else{
             session_start();
