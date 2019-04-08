@@ -4,7 +4,7 @@
     }
 
     $server='localhost';
-    $userName='Medrano';
+    $userName='root';
     $password='Password';
     $database='masterphp';
 

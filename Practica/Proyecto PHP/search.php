@@ -17,7 +17,6 @@
                 <?php $busqueda= search($_POST['search']);
                     while($resultados= mysqli_fetch_assoc($busqueda)):
                 ?>
-                <?php echo var_dump($resultados); ?>
                 <?php if($resultados['Nombre']=='Claudio'):?>
                     <h3>No hay resultados que mostrar</h3>
                 <?php endif;?>
